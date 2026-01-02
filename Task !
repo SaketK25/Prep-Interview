@@ -1,0 +1,31 @@
+#Student name
+#Roll number
+#List of Subjects
+#Marks
+
+name = input("Enter student's name: ")
+roll_number = int(input("Enter student's rollnumber: "))
+
+total_subjects = int(input("Enter the total number of subjects: "))
+
+subjects = []
+marks_list = []
+
+for i in range(total_subjects):
+  subject_name = input(f"Enter the name of subject{i+1}: ")
+  marks = int(input(f"Enter the marks for {subject_name}"))
+  subjects.append(subject_name)
+  marks_list.append(marks)
+
+real_subjects = set(subjects)
+
+subject_marks = {}
+
+for i in range(len(subjects)):
+  if subjects[i] not in subject_marks:
+    subject_marks[subjects[i]] = marks_list[i]
+
+print("*****Student Report*****")
+print(name)
+print(roll_number)
+print(subject_marks)
